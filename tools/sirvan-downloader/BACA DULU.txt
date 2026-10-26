@@ -1,0 +1,45 @@
+SIRVAN DOWNLOADER — WINDOWS 10/11 64-BIT
+
+CARA PASANG
+1. Klik kanan file ZIP > Extract All / Ekstrak Semua.
+2. Buka folder hasil ekstrak. Klik dua kali INSTALL.bat.
+3. Tunggu unduhan mesin selesai. Internet dibutuhkan.
+4. Aplikasi terbuka dan shortcut SirVan Downloader dibuat di Desktop.
+Tidak perlu mengetik perintah, memasang Python, atau berlangganan.
+
+CARA PAKAI
+1. Salin link VIDEO TikTok lewat tombol Bagikan > Salin tautan.
+2. Klik Tempel clipboard. Bisa beberapa link, satu per baris.
+3. Pilih folder proyek/footage.
+4. Klik Download, lalu Buka folder.
+Folder terakhir diingat. Video yang sudah selesai di folder yang sama dilewati.
+Untuk proyek lain, pilih folder lain. Video gagal tidak dicatat sebagai berhasil.
+
+JIKA GAGAL
+Klik Perbarui mesin, tunggu selesai, lalu coba lagi.
+Jika tetap gagal, klik Buka log dan kirim file .log terbaru untuk diperiksa.
+Video privat, dihapus, pembatasan wilayah, login, atau perubahan TikTok bisa
+menghalangi unduhan. Pembaruan bukan jaminan semua video bisa diunduh.
+
+KUALITAS & WATERMARK
+Memakai yt-dlp resmi, format MP4 audio+video terbaik yang tersedia, atau
+format gabungan terbaik jika MP4 tidak tersedia. Tidak mengompresi ulang.
+Tidak menaikkan resolusi. Tidak menghapus watermark yang menyatu di sumber.
+Versi TikTok tanpa watermark diambil jika tersedia melalui extractor yt-dlp.
+Tidak menjamin setiap sumber tersedia tanpa watermark.
+FFmpeg tidak dibutuhkan untuk alur unduh satu file gabungan ini.
+
+INSTALASI
+Program disimpan di folder pengguna LocalAppData/SirVanDownloader.
+Pemasang mengunduh yt-dlp dari github.com/yt-dlp/yt-dlp dan memeriksa SHA256
+terhadap checksum rilis resmi. Tidak mengubah execution policy permanen.
+Paket skrip ini belum ditandatangani digital. Jangan matikan antivirus.
+Jika Windows memblokirnya, kirim screenshot pesan agar bisa diperiksa.
+
+PENGHAPUSAN
+Tutup aplikasi. Hapus shortcut Desktop dan folder program di
+%LOCALAPPDATA%/SirVanDownloader. Folder footage milikmu tetap terpisah.
+
+BATAS PENGUJIAN
+Sintaks skrip diperiksa di PowerShell. Antarmuka Windows dan unduhan video
+TikTok nyata belum diuji di laptopmu. Tidak ada akses jarak jauh ke laptop.
