@@ -1,52 +1,45 @@
-SIRVAN DOWNLOADER V2 — WINDOWS 10/11 64-BIT
+SIRVAN DOWNLOADER V3 — WINDOWS 10/11 64-BIT
 
-CARA PASANG
-1. Klik kanan file ZIP > Extract All / Ekstrak Semua.
-2. Buka folder hasil ekstrak. Klik dua kali INSTALL.bat.
-3. Tunggu unduhan mesin selesai. Internet dibutuhkan.
-4. Aplikasi terbuka dan shortcut SirVan Downloader dibuat di Desktop.
-Tidak perlu mengetik perintah atau berlangganan. Python resmi dipasang otomatis jika diperlukan.
+PASANG SEKALI
+1. Buka Microsoft Store. Cari Python 3.13.
+2. Pastikan penerbitnya Python Software Foundation, lalu klik Get/Install.
+3. Ekstrak ZIP ini ke folder baru. Klik dua kali INSTALL.bat.
+4. Tunggu sampai selesai. Shortcut SirVan Downloader muncul di Desktop.
+Jika Python Store belum tersedia, pemasang membuka pencarian Store dan berhenti.
+Pasang Python dari Store, lalu jalankan INSTALL.bat kembali.
 
 CARA PAKAI
-1. Salin link VIDEO TikTok lewat tombol Bagikan > Salin tautan.
-2. Klik Tempel clipboard. Bisa beberapa link, satu per baris.
-3. Pilih folder proyek/footage.
-4. Klik Download, lalu Buka folder.
-Folder terakhir diingat. Video yang sudah selesai di folder yang sama dilewati.
-Untuk proyek lain, pilih folder lain. Video gagal tidak dicatat sebagai berhasil.
+Tempel link video TikTok (satu per baris), pilih folder, klik Download.
+Bisa beberapa link sekaligus. Folder terakhir diingat dan unduhan yang sudah
+tercatat di folder itu dilewati. Klik Buka folder untuk melihat hasil.
 
 JIKA GAGAL
-Klik Perbarui mesin, tunggu selesai, lalu coba lagi.
-Jika tetap gagal, klik Buka log dan kirim file .log terbaru untuk diperiksa.
-Video privat, dihapus, pembatasan wilayah, login, atau perubahan TikTok bisa
-menghalangi unduhan. Pembaruan bukan jaminan semua video bisa diunduh.
+Klik Perbarui mesin untuk memperbarui paket yt-dlp resmi dari PyPI.
+Jika gagal lagi, klik Buka log dan kirim file .log terbaru atau screenshot.
+Video privat/dihapus, pembatasan TikTok, atau kebijakan Windows bisa menghalangi.
+Jangan menonaktifkan Smart App Control atau antivirus untuk menjalankan aplikasi.
 
-KUALITAS & WATERMARK
-Memakai yt-dlp resmi, format MP4 audio+video terbaik yang tersedia, atau
-format gabungan terbaik jika MP4 tidak tersedia. Tidak mengompresi ulang.
-Tidak menaikkan resolusi. Tidak menghapus watermark yang menyatu di sumber.
-Versi TikTok tanpa watermark diambil jika tersedia melalui extractor yt-dlp.
-Tidak menjamin setiap sumber tersedia tanpa watermark.
-FFmpeg tidak dibutuhkan untuk alur unduh satu file gabungan ini.
+PERUBAHAN V3
+Menggunakan Python 3.13 distribusi Microsoft Store yang sudah dipasang pengguna.
+Tidak mengunduh atau menjalankan pemasang Python .exe yang gagal pada versi 2.
+Tidak menjalankan yt-dlp.exe yang diblokir pada versi 1.
+Tidak mengubah kebijakan keamanan Windows. TLS tetap diverifikasi.
+Paket yt-dlp dipasang dalam lingkungan aplikasi venv-store, terpisah dari Python utama.
 
-INSTALASI
-Program disimpan di folder pengguna LocalAppData/SirVanDownloader.
-Pemasang mengunduh Python resmi dari python.org jika belum tersedia,
-memeriksa SHA256 dari manifest Microsoft WinGet dan tanda tangan Python
-Software Foundation, lalu memasang yt-dlp dari PyPI dalam lingkungan aplikasi.
-Tidak menjalankan yt-dlp.exe yang diblokir sebelumnya. Smart App Control
-tetap aktif; kebijakan keamanan tidak diubah. Jika Windows tetap memblokir
-komponen, hentikan pemasangan dan kirim screenshot pesan tersebut. Tidak mengubah execution policy permanen.
-Paket skrip ini belum ditandatangani digital. Jangan matikan antivirus.
-Jika Windows memblokirnya, kirim screenshot pesan agar bisa diperiksa.
+KUALITAS
+Memilih MP4 audio+video terbaik yang tersedia, atau file gabungan terbaik
+jika MP4 tidak tersedia. Tidak melakukan kompresi ulang atau menaikkan resolusi.
+Versi tanpa watermark bergantung pada sumber yang tersedia. Watermark yang
+sudah menyatu dalam sumber tidak dihapus. FFmpeg tidak diperlukan untuk alur ini.
 
-PENGHAPUSAN
-Tutup aplikasi. Hapus shortcut Desktop dan folder program di
-%LOCALAPPDATA%/SirVanDownloader. Folder footage milikmu tetap terpisah. Python yang dipasang oleh pemasang ini
-dapat dihapus terpisah melalui Settings > Apps jika tidak digunakan aplikasi lain.
+LOKASI & PENGHAPUSAN
+Program: %LOCALAPPDATA%/SirVanDownloader
+Tutup aplikasi lalu hapus folder program dan shortcut Desktop untuk menghapus.
+Footage tetap tersimpan di folder pilihanmu. Python Store dapat dihapus terpisah
+melalui Settings > Apps jika tidak dipakai aplikasi lain.
 
 BATAS PENGUJIAN
-Sintaks skrip diperiksa di PowerShell. Alur worker diuji dengan mesin simulasi.
-Akses python.org dari lingkungan pengembangan dibatasi; unduhan pemasang
-Python dan pemeriksaan tanda tangannya dijalankan di laptop saat instalasi. Antarmuka Windows dan unduhan video
-TikTok nyata belum diuji di laptopmu. Tidak ada akses jarak jauh ke laptop.
+Sintaks PowerShell dan worker dengan mesin simulasi diperiksa di Linux.
+Jalur paket Python yt-dlp diuji di Linux. Instalasi Microsoft Store, virtual
+environment Store, antarmuka Windows, dan unduhan TikTok di laptop belum diuji.
+Keberhasilan pada Smart App Control belum dapat dijamin.

@@ -1,25 +1,22 @@
-# SirVan Downloader v2 untuk Windows
+# SirVan Downloader v3 untuk Windows
 
-[Unduh SirVan Downloader v2 (ZIP)](https://github.com/VanTheBots/YouTube-Pramakna/raw/refs/heads/sirvan-downloader-windows/downloads/SirVan-Downloader-Windows-v2.zip)
+[Unduh SirVan Downloader v3 (ZIP)](https://github.com/VanTheBots/YouTube-Pramakna/raw/refs/heads/sirvan-downloader-windows/downloads/SirVan-Downloader-Windows-v3.zip)
 
-1. Unduh ZIP baru, lalu klik kanan **Extract All / Ekstrak Semua** ke folder baru.
-2. Buka folder hasil ekstrak, lalu klik dua kali **INSTALL.bat**.
-3. Tunggu pemasangan Python resmi dan mesin pengunduh selesai. Shortcut **SirVan Downloader** muncul di Desktop.
-4. Tempel link video TikTok, pilih folder, lalu klik **Download**.
+1. Buka **Microsoft Store**, cari **Python 3.13** dengan penerbit **Python Software Foundation**, lalu klik **Get/Install**.
+2. Ekstrak ZIP baru ke folder baru, lalu klik dua kali **INSTALL.bat**.
+3. Tunggu selesai. Shortcut **SirVan Downloader** muncul di Desktop.
+4. Tempel link video TikTok, pilih folder, klik **Download**.
 
-Versi ini menggunakan paket Python `yt-dlp`, menggantikan executable mandiri `yt-dlp.exe` yang diblokir pada laptop pengguna. Pemasang tidak mengubah Smart App Control atau menonaktifkan antivirus. Kompatibilitas dengan kebijakan Windows laptop pengguna belum terbukti; jika komponen tetap diblokir, hentikan dan kirim screenshot pesan.
+Jika Python Store belum dipasang, pemasang membuka pencarian Store dan berhenti dengan petunjuk. Setelah Python terpasang, jalankan INSTALL.bat lagi.
 
-Python 64-bit yang sudah terpasang dan memiliki tanda tangan Python Software Foundation yang valid digunakan jika sesuai. Jika belum ada, pemasang mengambil Python 3.14.7 resmi dari python.org, memeriksa SHA256 dari manifest Microsoft WinGet dan tanda tangan Authenticode, lalu memasangnya untuk pengguna saat ini. yt-dlp dipasang dari PyPI resmi dalam virtual environment aplikasi. Tidak ada perubahan PATH atau kebutuhan mengetik perintah.
+## Perbaikan versi 3
 
-Memerlukan Windows 10/11 64-bit dan internet. Unduhan beberapa link, ingatan folder terakhir, arsip unduhan per folder, pembaruan mesin, dan log tersedia. Kualitas mengikuti file gabungan terbaik yang tersedia; versi tanpa watermark tidak dijamin tersedia.
+Versi 1 gagal karena executable yt-dlp diblokir Application Control. Versi 2 telah memverifikasi tanda tangan pemasang Python, tetapi Windows tetap memblokir komponen PythonBA.dll di dalamnya. Versi 3 menggunakan distribusi Python 3.13 Microsoft Store yang dipasang pengguna, lalu memasang paket yt-dlp dari PyPI dalam virtual environment aplikasi. Pemasang tidak menjalankan pemasang Python .exe, tidak mengubah Smart App Control, dan tidak mematikan antivirus.
 
-## Validasi
+Memerlukan Windows 10/11 64-bit, Microsoft Store, dan internet. Kualitas mengikuti file gabungan terbaik yang tersedia; versi tanpa watermark tidak selalu tersedia. Folder terakhir diingat, duplikat yang telah tercatat dilewati, pembaruan mesin dan log tersedia.
 
-- Sintaks semua skrip PowerShell lolos parser.
-- Worker: simulasi sukses dan kegagalan parsial lolos, termasuk pemanggilan `python -I -m yt_dlp`.
-- Instalasi paket PyPI dan pemanggilan versi yt-dlp berhasil di lingkungan Linux.
-- Pemasangan Python Windows, pemeriksaan Authenticode, UI Windows, dan unduhan TikTok nyata belum diuji. Akses python.org dari lingkungan pengembangan dibatasi; verifikasi pemasang dilakukan saat pemasangan di laptop.
+## Validasi dan batasan
 
-[Sumber checksum Python: Microsoft WinGet](https://github.com/microsoft/winget-pkgs/blob/master/manifests/p/Python/Python/3/14/3.14.7/Python.Python.3.14.installer.yaml)
+Sintaks seluruh skrip PowerShell dan worker dengan simulasi sukses/gagal lolos. Paket yt-dlp dari PyPI bisa dipasang dan dijalankan di Linux. Instalasi Microsoft Store, virtual environment Windows Store, UI Windows, dan unduhan TikTok nyata belum diuji. Kompatibilitas dengan Smart App Control pengguna belum terbukti; jika diblokir lagi, kirim screenshot pesan tanpa mematikan perlindungan.
 
-[Kode sumber pemasang dan aplikasi](../tools/sirvan-downloader/)
+[Kode sumber](../tools/sirvan-downloader/)

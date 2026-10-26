@@ -8,7 +8,7 @@ try {
         & (Join-Path $PSScriptRoot 'Update.ps1') *>> $request.log
         if (-not $?) { throw 'Pembaruan gagal.' }
     } else {
-        $exe = Join-Path $PSScriptRoot 'venv\Scripts\python.exe'
+        $exe = Join-Path $PSScriptRoot 'venv-store\Scripts\python.exe'
         if (-not (Test-Path -LiteralPath $exe)) { throw 'Mesin pengunduh belum terpasang. Klik Perbarui mesin.' }
         New-Item -ItemType Directory -Path $request.folder -Force | Out-Null
         $failed = 0
