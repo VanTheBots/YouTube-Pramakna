@@ -1,11 +1,11 @@
-SIRVAN DOWNLOADER — WINDOWS 10/11 64-BIT
+SIRVAN DOWNLOADER V2 — WINDOWS 10/11 64-BIT
 
 CARA PASANG
 1. Klik kanan file ZIP > Extract All / Ekstrak Semua.
 2. Buka folder hasil ekstrak. Klik dua kali INSTALL.bat.
 3. Tunggu unduhan mesin selesai. Internet dibutuhkan.
 4. Aplikasi terbuka dan shortcut SirVan Downloader dibuat di Desktop.
-Tidak perlu mengetik perintah, memasang Python, atau berlangganan.
+Tidak perlu mengetik perintah atau berlangganan. Python resmi dipasang otomatis jika diperlukan.
 
 CARA PAKAI
 1. Salin link VIDEO TikTok lewat tombol Bagikan > Salin tautan.
@@ -31,15 +31,22 @@ FFmpeg tidak dibutuhkan untuk alur unduh satu file gabungan ini.
 
 INSTALASI
 Program disimpan di folder pengguna LocalAppData/SirVanDownloader.
-Pemasang mengunduh yt-dlp dari github.com/yt-dlp/yt-dlp dan memeriksa SHA256
-terhadap checksum rilis resmi. Tidak mengubah execution policy permanen.
+Pemasang mengunduh Python resmi dari python.org jika belum tersedia,
+memeriksa SHA256 dari manifest Microsoft WinGet dan tanda tangan Python
+Software Foundation, lalu memasang yt-dlp dari PyPI dalam lingkungan aplikasi.
+Tidak menjalankan yt-dlp.exe yang diblokir sebelumnya. Smart App Control
+tetap aktif; kebijakan keamanan tidak diubah. Jika Windows tetap memblokir
+komponen, hentikan pemasangan dan kirim screenshot pesan tersebut. Tidak mengubah execution policy permanen.
 Paket skrip ini belum ditandatangani digital. Jangan matikan antivirus.
 Jika Windows memblokirnya, kirim screenshot pesan agar bisa diperiksa.
 
 PENGHAPUSAN
 Tutup aplikasi. Hapus shortcut Desktop dan folder program di
-%LOCALAPPDATA%/SirVanDownloader. Folder footage milikmu tetap terpisah.
+%LOCALAPPDATA%/SirVanDownloader. Folder footage milikmu tetap terpisah. Python yang dipasang oleh pemasang ini
+dapat dihapus terpisah melalui Settings > Apps jika tidak digunakan aplikasi lain.
 
 BATAS PENGUJIAN
-Sintaks skrip diperiksa di PowerShell. Antarmuka Windows dan unduhan video
+Sintaks skrip diperiksa di PowerShell. Alur worker diuji dengan mesin simulasi.
+Akses python.org dari lingkungan pengembangan dibatasi; unduhan pemasang
+Python dan pemeriksaan tanda tangannya dijalankan di laptop saat instalasi. Antarmuka Windows dan unduhan video
 TikTok nyata belum diuji di laptopmu. Tidak ada akses jarak jauh ke laptop.

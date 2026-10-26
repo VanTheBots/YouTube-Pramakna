@@ -1,1 +1,2 @@
-a49e4eb8c144d729ae7e0e7eb9b56df8d51188bf838e5190a1a5dc5f00b101db  SirVan-Downloader-Windows.zip
+bf95c466be57283edc99ffcccc4034f8d52c460296d7f3eff65de9923224e5b6  SirVan-Downloader-Windows-v2.zip
+bf95c466be57283edc99ffcccc4034f8d52c460296d7f3eff65de9923224e5b6  SirVan-Downloader-Windows.zip

@@ -8,7 +8,7 @@ try {
         & (Join-Path $PSScriptRoot 'Update.ps1') *>> $request.log
         if (-not $?) { throw 'Pembaruan gagal.' }
     } else {
-        $exe = Join-Path $PSScriptRoot 'bin\yt-dlp.exe'
+        $exe = Join-Path $PSScriptRoot 'venv\Scripts\python.exe'
         if (-not (Test-Path -LiteralPath $exe)) { throw 'Mesin pengunduh belum terpasang. Klik Perbarui mesin.' }
         New-Item -ItemType Directory -Path $request.folder -Force | Out-Null
         $failed = 0
@@ -24,7 +24,7 @@ try {
                 '--print','after_move:TERSIMPAN: %(filepath)s','--', $url)
             # Native stderr contains useful progress and must not become a terminating PS 5.1 error.
             $ErrorActionPreference = 'Continue'
-            & $exe @argsList >> $request.log 2>&1
+            & $exe -I -m yt_dlp @argsList >> $request.log 2>&1
             $code = $LASTEXITCODE
             $ErrorActionPreference = 'Stop'
             if ($code -ne 0) {
