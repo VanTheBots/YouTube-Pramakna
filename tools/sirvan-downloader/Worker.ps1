@@ -11,6 +11,10 @@ try {
         $exe = Join-Path $PSScriptRoot 'venv-store\Scripts\python.exe'
         if (-not (Test-Path -LiteralPath $exe)) { throw 'Mesin pengunduh belum terpasang. Klik Perbarui mesin.' }
         New-Item -ItemType Directory -Path $request.folder -Force | Out-Null
+        Add-Content -LiteralPath $request.log -Value 'Versi mesin:'
+        & $exe -I -m yt_dlp --ignore-config --version >> $request.log 2>&1
+        Add-Content -LiteralPath $request.log -Value 'Dukungan koneksi browser:'
+        & $exe -I -m yt_dlp --ignore-config --list-impersonate-targets >> $request.log 2>&1
         $failed = 0
         foreach ($url in $request.urls) {
             Add-Content -LiteralPath $request.log -Value "`r`nMengunduh: $url"
@@ -24,12 +28,14 @@ try {
                 '--print','after_move:TERSIMPAN: %(filepath)s','--', $url)
             # Native stderr contains useful progress and must not become a terminating PS 5.1 error.
             $ErrorActionPreference = 'Continue'
-            & $exe -I -m yt_dlp @argsList >> $request.log 2>&1
+            & $exe -I -m yt_dlp @argsList 2>&1 | ForEach-Object {
+                $_.ToString() | Out-File -LiteralPath $request.log -Append -Encoding utf8
+            }
             $code = $LASTEXITCODE
             $ErrorActionPreference = 'Stop'
             if ($code -ne 0) {
                 $failed++
-                Add-Content -LiteralPath $request.log -Value 'GAGAL untuk link ini. Coba Perbarui mesin; video privat/dihapus atau pembatasan TikTok juga bisa menjadi penyebab.'
+                Add-Content -LiteralPath $request.log -Value 'GAGAL untuk link ini. Jika sudah Perbarui mesin, buka video di browser untuk mengecek apakah bisa diputar, lalu kirim file .log terbaru lewat tombol Buka log. Pesan ini belum menentukan penyebabnya.'
             }
         }
         if ($failed -gt 0) { throw "$failed link gagal. Lihat log; unduhan lain yang berhasil tetap tersimpan." }

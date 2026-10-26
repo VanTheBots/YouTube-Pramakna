@@ -1,4 +1,4 @@
-SIRVAN DOWNLOADER V3 — WINDOWS 10/11 64-BIT
+SIRVAN DOWNLOADER V3.1 — WINDOWS 10/11 64-BIT
 
 PASANG SEKALI
 1. Buka Microsoft Store. Cari Python 3.13.
@@ -43,3 +43,7 @@ Sintaks PowerShell dan worker dengan mesin simulasi diperiksa di Linux.
 Jalur paket Python yt-dlp diuji di Linux. Instalasi Microsoft Store, virtual
 environment Store, antarmuka Windows, dan unduhan TikTok di laptop belum diuji.
 Keberhasilan pada Smart App Control belum dapat dijamin.
+
+PEMBARUAN 3.1
+Mesin memakai yt-dlp nightly beserta dependensi default dan curl_cffi.
+Pengguna versi 3 cukup menjalankan PERBAIKI.bat untuk memperbarui.

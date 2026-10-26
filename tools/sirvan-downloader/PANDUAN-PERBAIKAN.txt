@@ -1,0 +1,22 @@
+PERBAIKAN KONEKSI TIKTOK UNTUK SIRVAN V3
+
+1. Tutup SirVan Downloader.
+2. Ekstrak ZIP ini.
+3. Klik dua kali PERBAIKI.bat dan tekan Enter saat diminta.
+4. Tunggu pembaruan selesai. Aplikasi dibuka kembali otomatis.
+5. Coba unduh video lagi.
+
+Tidak perlu memasang ulang Python. Folder footage dan pengaturan tidak dihapus.
+Pembaruan memasang yt-dlp nightly beserta dependensi default dan curl_cffi dari
+PyPI, sesuai opsi resmi yt-dlp untuk browser impersonation. Sebelumnya versi 3
+hanya memasang yt-dlp dasar. Ini memperbaiki kekurangan dependensi, tetapi belum
+membuktikan bahwa respons TikTok untuk video pengguna akan bisa dibaca.
+
+Jika masih gagal, klik Buka log dan kirim file .log paling baru. Cek juga apakah
+video dapat diputar di browser pada laptop yang sama. Jangan mematikan Smart
+App Control jika ada komponen yang diblokir. Tidak ada pengambilan cookie browser.
+
+Validasi: sintaks skrip, simulasi worker sukses/gagal, instalasi dan pemuatan
+curl_cffi di Linux lolos. Seluruh wheel untuk Windows x64 Python 3.13 tersedia
+dan berhasil diunduh. Eksekusi DLL di Windows dan unduhan TikTok pengguna belum
+teruji; lingkungan pengembangan tidak memiliki izin akses TikTok.
